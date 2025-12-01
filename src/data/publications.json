@@ -1,0 +1,9 @@
+[
+  {
+    "id": "laravel-news",
+    "name": "Laravel News",
+    "url": "https://laravel-news.com",
+    "logo": "https://picperf.io/https://laravel-news.com/images/logo.svg",
+    "description": "The official community portal for Laravel framework news, tutorials, and announcements."
+  }
+]

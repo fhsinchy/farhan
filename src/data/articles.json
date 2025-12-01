@@ -1,0 +1,29 @@
+[
+  {
+    "id": "postgresql-vs-mongodb-laravel",
+    "title": "PostgreSQL vs. MongoDB for Laravel: Choosing the Right Database",
+    "url": "https://laravel-news.com/postgresql-vs-mongodb-for-laravel-choosing-the-right-database",
+    "publication": "Laravel News",
+    "publicationUrl": "https://laravel-news.com",
+    "date": "November 24th, 2025",
+    "description": "A comprehensive comparison between PostgreSQL and MongoDB for Laravel applications, exploring data models, query languages, relationships, transactions, performance, and real-world use cases to help developers choose the right database."
+  },
+  {
+    "id": "querying-data-mongodb-laravel",
+    "title": "Querying Data in MongoDB With Laravel: From Basics to Advanced Techniques",
+    "url": "https://laravel-news.com/querying-data-in-mongodb-with-laravel",
+    "publication": "Laravel News",
+    "publicationUrl": "https://laravel-news.com",
+    "date": "October 9th, 2025",
+    "description": "A complete guide to querying MongoDB with Laravel, covering setup, CRUD operations, advanced filtering, aggregation pipelines, indexing strategies, and testing techniques for building scalable applications."
+  },
+  {
+    "id": "mongodb-transactions-laravel",
+    "title": "MongoDB Transactions in Laravel",
+    "url": "https://laravel-news.com/mongodb-transactions-in-laravel",
+    "publication": "Laravel News",
+    "publicationUrl": "https://laravel-news.com",
+    "date": "October 28th, 2025",
+    "description": "A comprehensive guide to implementing MongoDB transactions within Laravel applications, covering setup, usage patterns, and best practices for database consistency."
+  }
+]

@@ -1,16 +1,239 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { getAllArticles } from '../utils/articles';
+import manualArticles from '../data/articles.json';
+import { getCurrentlyReading } from '../utils/goodreads';
 
+// Fetch currently reading books from Goodreads RSS
+const currentlyReading = await getCurrentlyReading();
+
+// Fetch all articles (RSS + manual, deduplicated and sorted)
+const articles = await getAllArticles(manualArticles);
+
+// Featured projects and achievements
+const featuredWork = [
+	{
+		type: "Handbook",
+		title: "The Docker Handbook",
+		description: "Comprehensive guide to Docker and containerization, read by hundreds of thousands of developers worldwide.",
+		url: "https://www.freecodecamp.org/news/the-docker-handbook/",
+		icon: "📦"
+	},
+	{
+		type: "Handbook",
+		title: "The Kubernetes Handbook",
+		description: "Complete guide to Kubernetes fundamentals, deployments, and orchestration for modern cloud-native applications.",
+		url: "https://www.freecodecamp.org/news/the-kubernetes-handbook/",
+		icon: "☸️"
+	},
+	{
+		type: "Handbook",
+		title: "The NGINX Handbook",
+		description: "In-depth exploration of NGINX as a web server, reverse proxy, and load balancer for high-performance systems.",
+		url: "https://www.freecodecamp.org/news/the-nginx-handbook/",
+		icon: "🌐"
+	},
+	{
+		type: "Handbook",
+		title: "The Arch Linux Handbook",
+		description: "Complete guide to installing, configuring, and mastering Arch Linux for power users and enthusiasts.",
+		url: "https://www.freecodecamp.org/news/how-to-install-arch-linux/",
+		icon: "🐧"
+	}
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={`${import.meta.env.SITE_AUTHOR} - Backend Engineer & Technical Educator`} description="Backend engineer with 7+ years experience and technical educator reaching millions of developers worldwide">
+	<div class="nes-container is-dark with-title">
+		<p class="title">👨‍💻 {import.meta.env.SITE_AUTHOR}</p>
+		
+		<!-- Hero Section -->
+		<div class="nes-container is-rounded" style="margin-bottom: 2rem;">
+			<h1 style="margin-bottom: 1rem; font-size: 1.5rem;">Backend Engineer & Technical Educator</h1>
+			<p style="font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.5rem; color: #ccc;">
+				Building scalable systems and teaching millions of developers worldwide. 
+				Staff at freeCodeCamp, Lead Backend Engineer at Repocket, and author of handbooks read by 500K+ developers.
+			</p>
+			
+			<!-- Impact Stats -->
+			<div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; justify-content: center;">
+				<div style="text-align: center;">
+					<div style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">7+</div>
+					<div style="font-size: 0.7rem; color: #888;">Years Experience</div>
+				</div>
+				<div style="text-align: center;">
+					<div style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">500K+</div>
+					<div style="font-size: 0.7rem; color: #888;">Developers Reached</div>
+				</div>
+				<div style="text-align: center;">
+					<div style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">2M+</div>
+					<div style="font-size: 0.7rem; color: #888;">Course Views</div>
+				</div>
+			</div>
+			
+			<!-- CTA Buttons -->
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+				<a href="/about" class="nes-btn is-primary">About Me</a>
+				<a href={import.meta.env.GITHUB_URL} target="_blank" rel="noopener noreferrer" class="nes-btn is-normal">GitHub</a>
+				<a href={import.meta.env.LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="nes-btn is-success">LinkedIn</a>
+			</div>
+		</div>
+
+		<!-- Three Pillars -->
+		<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+			
+			<!-- Engineering -->
+			<div class="nes-container is-rounded with-title is-dark">
+				<p class="title">💼 Engineering</p>
+				<div style="padding: 0.5rem;">
+					<h3 style="font-size: 1rem; margin-bottom: 1rem; color: #92cc41;">Building Scalable Systems</h3>
+					<ul style="font-size: 0.75rem; line-height: 1.8; list-style: none; padding: 0;">
+						<li style="margin-bottom: 0.5rem;">🚀 <strong>Software Engineer</strong> at freeCodeCamp - shaping education for millions</li>
+						<li style="margin-bottom: 0.5rem;">🏗️ Built multi-tenant SaaS platforms serving millions</li>
+						<li style="margin-bottom: 0.5rem;">☁️ Expert in microservices, Docker, Kubernetes, AWS</li>
+						<li style="margin-bottom: 0.5rem;">🤖 Integrating AI/LLMs into production systems</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Writing -->
+			<div class="nes-container is-rounded with-title is-dark">
+				<p class="title">✍️ Writing</p>
+				<div style="padding: 0.5rem;">
+					<h3 style="font-size: 1rem; margin-bottom: 1rem; color: #92cc41;">Teaching Through Content</h3>
+					<ul style="font-size: 0.75rem; line-height: 1.8; list-style: none; padding: 0;">
+						<li style="margin-bottom: 0.5rem;">📚 5 comprehensive handbooks (Docker, Kubernetes, Python...)</li>
+						<li style="margin-bottom: 0.5rem;">🎥 3 sponsored video courses (MongoDB, Replit, Neo4j)</li>
+						<li style="margin-bottom: 0.5rem;">📝 Technical articles on popular platforms</li>
+						<li style="margin-bottom: 0.5rem;">🌍 Content read by 500K+ developers globally</li>
+					</ul>
+					<a href="/articles" class="nes-btn is-warning" style="margin-top: 1rem; font-size: 0.7rem;">Browse Articles →</a>
+				</div>
+			</div>
+
+			<!-- Reading -->
+			<div class="nes-container is-rounded with-title is-dark">
+				<p class="title">📚 Reading</p>
+				<div style="padding: 0.5rem;">
+					<h3 style="font-size: 1rem; margin-bottom: 1rem; color: #92cc41;">Beyond the Code</h3>
+					<div style="margin-bottom: 1rem;">
+						<p style="font-size: 0.75rem; margin-bottom: 1rem; line-height: 1.6;">
+							When I'm not building systems, I'm exploring stories. Currently reading:
+						</p>
+						<div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+							{currentlyReading.map(book => (
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<img src={book.cover} alt={book.title} style="width: 40px; height: auto; border-radius: 4px;" />
+									<div style="flex: 1;">
+										<div style="font-size: 0.65rem; font-weight: bold; line-height: 1.3;">{book.title}</div>
+										<div style="font-size: 0.55rem; color: #888;">by {book.author}</div>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+					<a href="/books" class="nes-btn is-primary" style="font-size: 0.7rem;">View Bookshelf →</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Featured Work -->
+		<div class="nes-container is-rounded" style="margin-bottom: 2rem;">
+			<h2 style="margin-bottom: 1.5rem; font-size: 1.3rem;">🌟 Featured Work</h2>
+			
+			{featuredWork.map(work => (
+				<div class="nes-container is-rounded is-dark" style="margin-bottom: 1.5rem;">
+					<div style="display: flex; gap: 1rem; align-items: flex-start;">
+						<div style="font-size: 2rem; line-height: 1;">{work.icon}</div>
+						<div style="flex: 1;">
+							<div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+								<div>
+									<span style="font-size: 0.65rem; color: #888; text-transform: uppercase;">{work.type}</span>
+									<h3 style="font-size: 1rem; margin: 0.25rem 0 0.5rem 0;">{work.title}</h3>
+								</div>
+							</div>
+							<p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem; color: #ccc;">
+								{work.description}
+							</p>
+							<a href={work.url} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary" style="font-size: 0.7rem;">
+								View Project →
+							</a>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<!-- Latest Articles Preview -->
+		<div class="nes-container is-rounded">
+			<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+				<h2 style="margin: 0; font-size: 1.3rem;">📝 Latest Articles</h2>
+				<a href="/articles" class="nes-btn is-warning">View All →</a>
+			</div>
+			
+			{articles.slice(0, 2).map(article => (
+				<div class="nes-container is-rounded with-title is-dark" style="margin-bottom: 1.5rem;">
+					<p class="title">{article.title}</p>
+					<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+						<span style="font-size: 0.7rem; color: #ccc;">{article.publication}</span>
+						<span style="font-size: 0.7rem; color: #888;">• {article.date}</span>
+					</div>
+					<p style="font-size: 0.8rem; line-height: 1.8; margin-bottom: 1.5rem;">
+						{article.description}
+					</p>
+					<a href={article.url} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary">
+						Read Article →
+					</a>
+				</div>
+			))}
+		</div>
+		
+		<!-- Connect Section -->
+		<div class="nes-container is-rounded" style="margin-top: 2rem; text-align: center;">
+			<h2 style="margin-bottom: 1rem;">🤝 Let's Connect</h2>
+			<p style="font-size: 0.85rem; margin-bottom: 1.5rem; color: #ccc;">
+				Open to interesting backend engineering opportunities and collaborations.
+			</p>
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+				<a href={`mailto:${import.meta.env.SITE_EMAIL}`} class="nes-btn is-success">Email Me</a>
+				<a href={import.meta.env.TWITTER_URL} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary">Twitter</a>
+				<a href="/about" class="nes-btn is-warning">About Me</a>
+			</div>
+		</div>
+	</div>
+	
+	<style>
+		.recent-books {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+		
+		.book-cover {
+			flex-shrink: 0;
+		}
+		
+		.book-cover img {
+			width: 50px;
+			height: 75px;
+			object-fit: cover;
+			border: 2px solid #fff;
+		}
+		
+		.review-text {
+			color: #fff;
+			line-height: 1.4;
+			font-family: monospace;
+			background-color: rgba(146, 204, 65, 0.1);
+			border: 1px solid #92cc41;
+		}
+		
+		@media (max-width: 768px) {
+			.book-cover img {
+				width: 40px;
+				height: 60px;
+				border-width: 1px;
+			}
+		}
+	</style>
+</Layout>

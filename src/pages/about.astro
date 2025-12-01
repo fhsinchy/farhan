@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title={`About - ${import.meta.env.SITE_TITLE}`} description="Learn more about Farhan and his technical expertise">
+	<div class="nes-container is-dark with-title">
+		<p class="title">👨‍💻 About Me</p>
+		
+		<div class="nes-container is-rounded">
+			<div style="margin-bottom: 2rem;">
+				<h2 style="margin: 0;">{import.meta.env.SITE_AUTHOR}</h2>
+			</div>
+			
+			<div style="margin-bottom: 2rem;">
+				<h3 style="color: #92cc41; margin-bottom: 1rem;">🚀 Who I Am</h3>
+				<p style="font-size: 0.8rem; line-height: 1.8;">
+					I'm a Software Engineer at <strong>freeCodeCamp</strong>, where I lead the design and development of the Python curriculum, 
+					shaping how millions of learners worldwide practice programming. With 7+ years of backend engineering experience, 
+					I've built scalable systems across SaaS, media, and fintech - from multi-tenant platforms to high-traffic digital journalism sites. 
+					I'm also a technical author whose handbooks on Docker, Kubernetes, NGINX, and other technologies have been read by over 500,000 developers globally.
+				</p>
+			</div>
+			
+			<div style="margin-bottom: 2rem;">
+				<h3 style="color: #92cc41; margin-bottom: 1rem;">💼 Professional Journey</h3>
+				<div style="font-size: 0.75rem; line-height: 2;">
+					<div style="margin-bottom: 1rem;">
+						<strong style="color: #92cc41;">Software Engineer</strong> - freeCodeCamp<br/>
+						<span style="color: #888;">Dec 2021 - Present</span><br/>
+						Leading Python curriculum design, contributing to OSS codebase, mentoring global contributors.
+					</div>
+					<div style="margin-bottom: 1rem;">
+						<strong style="color: #92cc41;">Lead Backend Engineer</strong> - Repocket<br/>
+						Refactored legacy systems, architected AI-powered APIs, guided team on cloud-native practices.
+					</div>
+					<div style="margin-bottom: 1rem;">
+						<strong style="color: #92cc41;">Lead Backend Engineer</strong> - Sayburgh Solutions<br/>
+						Built FoodQo (multi-tenant SaaS), DigiAdent (high-traffic journalism platform), and OTT platform foundations.
+					</div>
+				</div>
+			</div>
+			
+			<div style="margin-bottom: 2rem;">
+				<h3 style="color: #92cc41; margin-bottom: 1rem;">💡 Technical Expertise</h3>
+				<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+					<span class="nes-badge is-primary">TypeScript/Node.js</span>
+					<span class="nes-badge is-primary">Python</span>
+					<span class="nes-badge is-primary">PHP/Laravel</span>
+					<span class="nes-badge is-primary">Docker</span>
+					<span class="nes-badge is-primary">Kubernetes</span>
+					<span class="nes-badge is-primary">AWS</span>
+					<span class="nes-badge is-primary">PostgreSQL</span>
+					<span class="nes-badge is-primary">MongoDB</span>
+					<span class="nes-badge is-primary">Redis</span>
+					<span class="nes-badge is-primary">Microservices</span>
+					<span class="nes-badge is-primary">System Design</span>
+					<span class="nes-badge is-primary">REST APIs</span>
+				</div>
+			</div>
+			
+			<div style="margin-bottom: 2rem;">
+				<h3 style="color: #92cc41; margin-bottom: 1rem;">✍️ Writing & Teaching</h3>
+				<p style="font-size: 0.8rem; line-height: 1.8; margin-bottom: 1rem;">
+					My mission is to make complex technical concepts accessible. I've authored <strong>5 comprehensive handbooks</strong> 
+					including The Docker Handbook, The Kubernetes Handbook, The NGINX Handbook, The Arch Linux Handbook, and The Python Code Example Handbook - 
+					collectively read by <strong>500,000+ developers</strong>. I also produce video courses sponsored by industry leaders like MongoDB, 
+					Replit, and Neo4j, with over 3 million total views.
+				</p>
+				<p style="font-size: 0.8rem; line-height: 1.8;">
+					I contribute technical articles to <strong>freeCodeCamp</strong>, <strong>Laravel News</strong>, and other platforms, 
+					focusing on practical solutions, best practices, and hands-on tutorials that help developers solve real-world problems.
+				</p>
+			</div>
+			
+			<div style="margin-bottom: 2rem;">
+				<h3 style="color: #92cc41; margin-bottom: 1rem;">📚 Beyond Code</h3>
+				<p style="font-size: 0.8rem; line-height: 1.8;">
+					When I'm not building systems or writing tutorials, you'll find me exploring stories. I'm an avid reader of fiction - 
+					especially mystery, horror, philosophy, and classics. From Dostoevsky to contemporary Japanese literature, 
+					reading keeps me grounded and reminds me that great software, like great stories, is fundamentally about solving human problems. 
+					Check out my <a href="/books" style="color: #92cc41; text-decoration: underline;">reading journey</a> to see what I'm currently into.
+				</p>
+			</div>
+			
+			<div style="margin-bottom: 2rem;">
+				<h3 style="color: #92cc41; margin-bottom: 1rem;">🔗 Let's Connect</h3>
+				<p style="font-size: 0.8rem; line-height: 1.8; margin-bottom: 1rem;">
+					I'm always open to interesting conversations about backend engineering, technical writing, or just good books. 
+					Feel free to reach out!
+				</p>
+				<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+					<a href="mailto:interrupt@farhan.dev" class="nes-btn is-success">
+						Email Me
+					</a>
+					<a href="https://github.com/fhsinchy" target="_blank" rel="noopener noreferrer" class="nes-btn is-primary">
+						GitHub
+					</a>
+					<a href="https://twitter.com/frhnhsin" target="_blank" rel="noopener noreferrer" class="nes-btn is-info">
+						Twitter
+					</a>
+					<a href="https://linkedin.com/in/farhanhasin" target="_blank" rel="noopener noreferrer" class="nes-btn">
+						LinkedIn
+					</a>
+				</div>
+			</div>
+			
+			<div style="text-align: center; margin-top: 3rem;">
+				<a href="/articles" class="nes-btn is-warning">Browse Articles</a>
+				<a href="/books" class="nes-btn is-primary">Bookshelf</a>
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -9,6 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.3"
+    "@astrojs/sitemap": "^3.6.0",
+    "@fontsource/press-start-2p": "^5.2.7",
+    "astro": "^5.16.3",
+    "fast-xml-parser": "^5.3.2",
+    "nes.css": "^2.2.1"
   }
 }

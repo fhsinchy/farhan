@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getAllArticles } from '../utils/articles';
+import manualArticles from '../data/articles.json';
+
+// Fetch all articles (RSS + manual, deduplicated and sorted)
+const allArticles = await getAllArticles(manualArticles);
+
+// Get unique publications for filter
+const publications = [...new Set(allArticles.map(a => a.publication))];
+---
+
+<Layout title={`All Articles - ${import.meta.env.SITE_TITLE}`} description="Browse all articles by Farhan">
+	<div class="nes-container is-dark with-title">
+		<p class="title">📝 All Articles</p>
+		
+		<div class="nes-container is-rounded" style="margin-bottom: 2rem;">
+			<div style="margin-bottom: 2rem;">
+				<h2 style="margin: 0;">Technical Writing</h2>
+			</div>
+			
+			<p style="font-size: 0.8rem; line-height: 1.8; margin-bottom: 2rem;">
+				A collection of my technical articles published across various platforms. I write about web development, 
+				database systems, modern frameworks, and practical solutions to real-world programming challenges.
+				These articles reflect my journey through the ever-evolving landscape of software development.
+			</p>
+			
+			<!-- Search and Filter -->
+			<div style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+				<div style="flex: 1; min-width: 250px;">
+					<input 
+						type="text" 
+						id="searchInput" 
+						class="nes-input is-dark" 
+						placeholder="Search articles..."
+						style="width: 100%; font-size: 0.7rem;"
+					/>
+				</div>
+				<div>
+					<select id="publicationFilter" class="nes-select is-dark" style="font-size: 0.7rem;">
+						<option value="">All Publications</option>
+						{publications.map(pub => (
+							<option value={pub}>{pub}</option>
+						))}
+					</select>
+				</div>
+			</div>
+			
+			<div id="articlesContainer">
+				{allArticles.map(article => (
+					<div class="article-item nes-container with-title is-dark" 
+						 style="margin-bottom: 2rem;"
+						 data-title={article.title.toLowerCase()}
+						 data-description={article.description.toLowerCase()}
+						 data-publication={article.publication}>
+						<p class="title">{article.title}</p>
+						<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+							<span style="font-size: 0.7rem; color: #ccc;">{article.publication}</span>
+							<span style="font-size: 0.7rem; color: #888;">• {article.date}</span>
+						</div>
+						<p style="font-size: 0.8rem; line-height: 1.8; margin-bottom: 1.5rem;">
+							{article.description}
+						</p>
+						<a href={article.url} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary">
+							Read Article →
+						</a>
+					</div>
+				))}
+			</div>
+			
+			<div id="noResults" style="display: none; text-align: center; padding: 2rem;">
+				<p style="font-size: 0.8rem; color: #888;">No articles found matching your criteria.</p>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+		const publicationFilter = document.getElementById('publicationFilter') as HTMLSelectElement;
+		const articles = document.querySelectorAll('.article-item') as NodeListOf<HTMLElement>;
+		const noResults = document.getElementById('noResults') as HTMLElement;
+		
+		function filterArticles() {
+			const searchTerm = searchInput.value.toLowerCase();
+			const selectedPublication = publicationFilter.value;
+			let visibleCount = 0;
+			
+			articles.forEach(article => {
+				const title = article.dataset.title || '';
+				const description = article.dataset.description || '';
+				const publication = article.dataset.publication || '';
+				
+				const matchesSearch = !searchTerm || 
+					title.includes(searchTerm) || 
+					description.includes(searchTerm);
+				
+				const matchesPublication = !selectedPublication || 
+					publication === selectedPublication;
+				
+				if (matchesSearch && matchesPublication) {
+					article.style.display = 'block';
+					visibleCount++;
+				} else {
+					article.style.display = 'none';
+				}
+			});
+			
+			noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+		}
+		
+		searchInput?.addEventListener('input', filterArticles);
+		publicationFilter?.addEventListener('change', filterArticles);
+	</script>
+</Layout>
+		</div>
+			
+			<div style="text-align: center; margin-top: 3rem;">
+				<a href="/" class="nes-btn is-normal">← Back Home</a>
+				<a href="/books" class="nes-btn is-primary">Bookshelf</a>
+			</div>
+		</div>
+	</div>
+</Layout>

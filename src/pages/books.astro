@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getReadBooks } from '../utils/goodreads';
+
+// Fetch read books from Goodreads RSS
+const books = await getReadBooks();
+---
+
+<Layout title={`Books - ${import.meta.env.SITE_TITLE}`} description="Books I've been reading">
+	<div class="nes-container is-dark with-title">
+		<p class="title">📚 Bookshelf</p>
+		
+		<div class="nes-container is-rounded" style="margin-bottom: 2rem;">
+			<div style="margin-bottom: 2rem;">
+				<h2 style="margin: 0;">Reading Journey</h2>
+			</div>
+			
+			<p style="font-size: 0.8rem; line-height: 1.8; margin-bottom: 2rem;">
+				Here are some of the books I've been reading lately. I love exploring different genres - 
+				from classic literature to modern fiction, philosophical works to horror stories.
+				These reviews are from my Goodreads account.
+			</p>
+			
+			<!-- Books List -->
+			<div class="books-list">
+				{books.map((book, index) => (
+					<div class="nes-container is-rounded with-title is-dark book-item">
+						<p class="title">{book.title}</p>
+						
+						<div style="display: flex; gap: 1.5rem; margin-bottom: 1rem;">
+							<div class="book-cover">
+								<img src={book.cover} alt={book.title} />
+							</div>
+							
+							<div style="flex: 1;">
+								<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+									<div>
+										<span style="font-size: 0.7rem; color: #ccc;">by {book.author}</span>
+									</div>
+									<div class="rating">
+										{Array.from({ length: 5 }).map((_, i) => (
+											<span style={`color: ${i < (book.rating ?? 0) ? '#92cc41' : '#666'}; font-size: 0.8rem;`}>★</span>
+										))}
+									</div>
+								</div>
+								
+								<div class="review-text">
+									{book.review || "Couldn't find the words to describe my feelings... sometimes a book just leaves you speechless."}
+								</div>
+								
+								<div style="margin-top: 1rem;">
+									<a href={book.url} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary" style="font-size: 0.6rem; padding: 8px 12px;">
+										View on Goodreads →
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+			
+			<div style="text-align: center; margin-top: 3rem;">
+				<a href="https://www.goodreads.com/user/show/155924638-farhan-hasin-chowdhury" target="_blank" rel="noopener noreferrer" class="nes-btn is-primary">
+					View on Goodreads →
+				</a>
+				<a href="/articles" class="nes-btn is-success">Browse Articles</a>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<style>
+		.books-list {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+		
+		.book-item {
+			border: 4px solid #fff !important;
+		}
+		
+		.book-item .title {
+			color: #92cc41 !important;
+			font-size: 0.9rem !important;
+		}
+		
+		.book-cover {
+			flex-shrink: 0;
+		}
+		
+		.book-cover img {
+			width: 80px;
+			height: 120px;
+			object-fit: cover;
+			border: 3px solid #fff;
+		}
+		
+		.rating {
+			display: flex;
+			gap: 2px;
+		}
+		
+		.review-text {
+			font-size: 0.7rem;
+			line-height: 1.6;
+			color: #fff;
+			padding: 1rem;
+			background-color: rgba(146, 204, 65, 0.1);
+			border: 2px solid #92cc41;
+			font-family: monospace;
+		}
+		
+		@media (max-width: 768px) {
+			.book-item .title {
+				font-size: 0.8rem !important;
+			}
+			
+			.book-cover img {
+				width: 60px;
+				height: 90px;
+				border-width: 2px;
+			}
+			
+			.review-text {
+				font-size: 0.6rem;
+				padding: 0.8rem;
+			}
+		}
+	</style>
+</Layout>

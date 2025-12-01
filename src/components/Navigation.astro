@@ -1,0 +1,89 @@
+---
+const currentPath = Astro.url.pathname;
+
+const isActive = (path: string) => {
+  if (path === '/') {
+    return currentPath === '/';
+  }
+  return currentPath.startsWith(path);
+};
+---
+
+<nav class="navigation">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="/" class={isActive('/') ? 'active' : ''}>
+        {import.meta.env.SITE_TITLE}
+      </a>
+    </div>
+    
+    <div class="nav-links">
+      <a href="/about" class={`nes-btn ${isActive('/about') ? 'is-primary' : 'is-normal'}`}>
+        About
+      </a>
+      <a href="/articles" class={`nes-btn ${isActive('/articles') ? 'is-primary' : 'is-normal'}`}>
+        Articles
+      </a>
+      <a href="/books" class={`nes-btn ${isActive('/books') ? 'is-primary' : 'is-normal'}`}>
+        Books
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navigation {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .nav-brand a {
+    font-size: 1rem;
+    color: #92cc41;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-brand a:hover {
+    color: #7fb530;
+  }
+  
+  .nav-brand a.active {
+    color: #fff;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links a {
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .nav-links {
+      width: 100%;
+    }
+    
+    .nav-links a {
+      flex: 1;
+      text-align: center;
+    }
+  }
+</style>
