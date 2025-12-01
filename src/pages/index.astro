@@ -48,26 +48,26 @@ const featuredWork = [
 		<p class="title">👨‍💻 {import.meta.env.SITE_AUTHOR}</p>
 		
 		<!-- Hero Section -->
-		<div class="nes-container is-rounded" style="margin-bottom: 2rem;">
-			<h1 style="margin-bottom: 1rem; font-size: 1.5rem;">Backend Engineer & Technical Educator</h1>
-			<p style="font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.5rem; color: #ccc;">
+		<div class="nes-container is-rounded hero-section" style="margin-bottom: 2rem;">
+			<h1 class="hero-title" style="margin-bottom: 1rem; font-size: 1.5rem;">Backend Engineer & Technical Educator</h1>
+			<p class="hero-description" style="font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.5rem; color: #ccc;">
 				Building scalable systems and teaching millions of developers worldwide. 
 				Staff at freeCodeCamp, Lead Backend Engineer at Repocket, and author of handbooks read by 500K+ developers.
 			</p>
 			
 			<!-- Impact Stats -->
-			<div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; justify-content: center;">
+			<div class="stats-grid" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; justify-content: center;">
 				<div style="text-align: center;">
-					<div style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">7+</div>
-					<div style="font-size: 0.7rem; color: #888;">Years Experience</div>
+					<div class="stat-number" style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">7+</div>
+					<div class="stat-label" style="font-size: 0.7rem; color: #888;">Years Experience</div>
 				</div>
 				<div style="text-align: center;">
-					<div style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">500K+</div>
-					<div style="font-size: 0.7rem; color: #888;">Developers Reached</div>
+					<div class="stat-number" style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">500K+</div>
+					<div class="stat-label" style="font-size: 0.7rem; color: #888;">Developers Reached</div>
 				</div>
 				<div style="text-align: center;">
-					<div style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">2M+</div>
-					<div style="font-size: 0.7rem; color: #888;">Course Views</div>
+					<div class="stat-number" style="font-size: 1.5rem; color: #92cc41; font-weight: bold;">2M+</div>
+					<div class="stat-label" style="font-size: 0.7rem; color: #888;">Course Views</div>
 				</div>
 			</div>
 			
@@ -80,7 +80,7 @@ const featuredWork = [
 		</div>
 
 		<!-- Three Pillars -->
-		<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+		<div class="pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
 			
 			<!-- Engineering -->
 			<div class="nes-container is-rounded with-title is-dark">
@@ -138,21 +138,21 @@ const featuredWork = [
 		</div>
 
 		<!-- Featured Work -->
-		<div class="nes-container is-rounded" style="margin-bottom: 2rem;">
+		<div class="nes-container is-rounded featured-work" style="margin-bottom: 2rem;">
 			<h2 style="margin-bottom: 1.5rem; font-size: 1.3rem;">🌟 Featured Work</h2>
 			
 			{featuredWork.map(work => (
 				<div class="nes-container is-rounded is-dark" style="margin-bottom: 1.5rem;">
-					<div style="display: flex; gap: 1rem; align-items: flex-start;">
-						<div style="font-size: 2rem; line-height: 1;">{work.icon}</div>
-						<div style="flex: 1;">
+					<div class="featured-item" style="display: flex; gap: 1rem; align-items: flex-start;">
+						<div class="featured-icon" style="font-size: 2rem; line-height: 1; flex-shrink: 0;">{work.icon}</div>
+						<div style="flex: 1; min-width: 0;">
 							<div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
-								<div>
+								<div style="min-width: 0;">
 									<span style="font-size: 0.65rem; color: #888; text-transform: uppercase;">{work.type}</span>
-									<h3 style="font-size: 1rem; margin: 0.25rem 0 0.5rem 0;">{work.title}</h3>
+									<h3 style="font-size: 1rem; margin: 0.25rem 0 0.5rem 0; word-wrap: break-word;">{work.title}</h3>
 								</div>
 							</div>
-							<p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem; color: #ccc;">
+							<p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem; color: #ccc; word-wrap: break-word;">
 								{work.description}
 							</p>
 							<a href={work.url} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary" style="font-size: 0.7rem;">
@@ -229,10 +229,73 @@ const featuredWork = [
 		}
 		
 		@media (max-width: 768px) {
+			.hero-title {
+				font-size: 1rem !important;
+				line-height: 1.4 !important;
+			}
+			
+			.hero-description {
+				font-size: 0.7rem !important;
+				line-height: 1.6 !important;
+			}
+			
+			.stats-grid {
+				gap: 1rem !important;
+			}
+			
+			.stat-number {
+				font-size: 1.2rem !important;
+			}
+			
+			.stat-label {
+				font-size: 0.6rem !important;
+			}
+			
+			.pillars-grid {
+				grid-template-columns: 1fr !important;
+				gap: 1rem !important;
+			}
+			
+			.pillars-grid h3 {
+				font-size: 0.8rem !important;
+			}
+			
+			.pillars-grid ul {
+				font-size: 0.65rem !important;
+			}
+			
 			.book-cover img {
 				width: 40px;
 				height: 60px;
 				border-width: 1px;
+			}
+			
+			.reading-section h2,
+			.featured-work h2,
+			.articles-section h2 {
+				font-size: 0.9rem !important;
+			}
+			
+			.featured-work .nes-container {
+				padding: 0.75rem !important;
+			}
+			
+			.featured-icon {
+				font-size: 1.5rem !important;
+			}
+			
+			.featured-item {
+				flex-direction: column !important;
+				gap: 0.5rem !important;
+			}
+			
+			.featured-work h3 {
+				font-size: 0.75rem !important;
+			}
+			
+			.featured-work p {
+				font-size: 0.65rem !important;
+				line-height: 1.5 !important;
 			}
 		}
 	</style>

@@ -108,9 +108,31 @@ const publications = [...new Set(allArticles.map(a => a.publication))];
 			noResults.style.display = visibleCount === 0 ? 'block' : 'none';
 		}
 		
-		searchInput?.addEventListener('input', filterArticles);
-		publicationFilter?.addEventListener('change', filterArticles);
-	</script>
+	searchInput?.addEventListener('input', filterArticles);
+	publicationFilter?.addEventListener('change', filterArticles);
+</script>
+
+<style>
+	@media (max-width: 768px) {
+		.article-item h3 {
+			font-size: 0.75rem !important;
+		}
+		
+		.article-item p {
+			font-size: 0.65rem !important;
+			line-height: 1.5 !important;
+		}
+		
+		.article-item span {
+			font-size: 0.6rem !important;
+		}
+		
+		#searchInput,
+		#publicationFilter {
+			font-size: 0.7rem !important;
+		}
+	}
+</style>
 </Layout>
 		</div>
 			

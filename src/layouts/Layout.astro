@@ -72,6 +72,7 @@ const siteAuthor = import.meta.env.SITE_AUTHOR;
 				margin: 0;
 				padding: 2rem;
 				line-height: 1.6;
+				font-size: 16px;
 			}
 			
 			:global(a) {
@@ -95,15 +96,62 @@ const siteAuthor = import.meta.env.SITE_AUTHOR;
 			
 			:global(.nes-btn) {
 				font-family: 'Press Start 2P', cursive;
+				font-size: 0.8rem;
+				white-space: normal;
+				text-align: center;
 			}
 			
 			:global(h1, h2, h3, h4, h5, h6) {
 				font-family: 'Press Start 2P', cursive;
 				margin-bottom: 1rem;
+				word-wrap: break-word;
 			}
 			
 			:global(p) {
 				margin-bottom: 1rem;
+				word-wrap: break-word;
+			}
+			
+			/* Mobile Responsive Styles */
+			@media (max-width: 768px) {
+				:global(body) {
+					padding: 1rem;
+					font-size: 14px;
+					line-height: 1.5;
+				}
+				
+				:global(.container) {
+					padding: 0;
+				}
+				
+				:global(.nes-btn) {
+					font-size: 0.7rem;
+					padding: 0.5rem 1rem;
+				}
+				
+				:global(h1) {
+					font-size: 1rem !important;
+					line-height: 1.4;
+				}
+				
+				:global(h2) {
+					font-size: 0.9rem !important;
+					line-height: 1.4;
+				}
+				
+				:global(h3) {
+					font-size: 0.8rem !important;
+					line-height: 1.4;
+				}
+				
+				:global(.nes-container) {
+					padding: 1rem !important;
+				}
+				
+				:global(.nes-container.with-title > .title) {
+					font-size: 0.7rem !important;
+					padding: 0.5rem 1rem !important;
+				}
 			}
 		</style>
 	</head>
