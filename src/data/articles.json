@@ -1,5 +1,23 @@
 [
   {
+    "id": "migrating-sql-to-mongodb",
+    "title": "Migrating from SQL to MongoDB",
+    "url": "https://laravel-news.com/migrating-from-sql-to-mongodb",
+    "publication": "Laravel News",
+    "publicationUrl": "https://laravel-news.com",
+    "date": "December 10th, 2025",
+    "description": "A complete guide to migrating Laravel applications from SQL to MongoDB, covering schema analysis, data modeling differences, migration strategies, query adaptation, and testing approaches for a smooth transition."
+  },
+  {
+    "id": "optimizing-mongodb-queries-java",
+    "title": "Optimizing MongoDB Queries in Java Applications",
+    "url": "https://foojay.io/today/optimizing-mongodb-queries-in-java-applications/",
+    "publication": "foojay",
+    "publicationUrl": "https://foojay.io",
+    "date": "December 9th, 2025",
+    "description": "A comprehensive guide to MongoDB performance optimization in Java, covering query profiling, indexing strategies, anti-patterns to avoid, read/write optimization, aggregation pipelines, and production monitoring practices."
+  },
+  {
     "id": "postgresql-vs-mongodb-laravel",
     "title": "PostgreSQL vs. MongoDB for Laravel: Choosing the Right Database",
     "url": "https://laravel-news.com/postgresql-vs-mongodb-for-laravel-choosing-the-right-database",
