@@ -43,5 +43,95 @@
     "publicationUrl": "https://laravel-news.com",
     "date": "October 28th, 2025",
     "description": "A comprehensive guide to implementing MongoDB transactions within Laravel applications, covering setup, usage patterns, and best practices for database consistency."
+  },
+  {
+    "id": "building-headless-cms-with-laravel",
+    "title": "Building a Headless CMS with Laravel: A Step-by-Step Guide",
+    "url": "https://adevait.com/laravel/building-headless-cms-with-laravel",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "January 15th, 2023",
+    "description": "A step-by-step guide to building a headless CMS with Laravel, exploring the modern concept of decoupling backend and frontend for flexible content management."
+  },
+  {
+    "id": "conducting-technical-interviews",
+    "title": "A Comprehensive Approach to Conducting Technical Interviews for Engineering Managers",
+    "url": "https://adevait.com/leadership/conducting-technical-interviews",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "February 28th, 2023",
+    "description": "A comprehensive guide to conducting technical interviews for engineering managers, covering best practices and approaches for the hiring process in tech industries."
+  },
+  {
+    "id": "event-loop-javascript",
+    "title": "Understanding the Event Loop in JavaScript",
+    "url": "https://adevait.com/javascript-developers/event-loop-javascript",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "January 12th, 2023",
+    "description": "An in-depth explanation of the event loop in JavaScript, a fundamental concept that JavaScript developers need to understand for building efficient applications."
+  },
+  {
+    "id": "jwt-authentication-node",
+    "title": "How To Implement JWT Authentication On Node",
+    "url": "https://adevait.com/nodejs/how-to-implement-jwt-authentication-on-node",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "September 14th, 2022",
+    "description": "A guide to implementing stateless JWT authentication in Node.js, covering the fundamentals and best practices for securing Node applications."
+  },
+  {
+    "id": "laravel-with-vue-js-3",
+    "title": "A Quick Guide for How To Use Laravel With Vue.js 3",
+    "url": "https://adevait.com/laravel/how-to-use-laravel-with-vue-js-3",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "July 19th, 2022",
+    "description": "A quick guide to integrating Vue.js 3 with Laravel, covering the integration of a modern frontend framework with the popular PHP framework."
+  },
+  {
+    "id": "shopping-cart-laravel-livewire",
+    "title": "How to Create a Shopping Cart With Laravel Livewire",
+    "url": "https://adevait.com/laravel/create-shopping-cart-laravel-livewire",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "May 24th, 2022",
+    "description": "A comprehensive guide to creating a shopping cart with Laravel Livewire, covering the practical implementation of interactive features in Laravel applications."
+  },
+  {
+    "id": "custom-package-laravel",
+    "title": "Creating Your Own Laravel Custom Package: A Step-by-Step Guide",
+    "url": "https://adevait.com/laravel/how-to-create-a-custom-package-for-laravel",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "March 8th, 2022",
+    "description": "A step-by-step guide to creating custom Laravel packages, covering package structure, configuration, and how to make reusable and shareable code for the Laravel community."
+  },
+  {
+    "id": "containerizing-laravel-docker",
+    "title": "A Practical Guide to Containerizing Laravel Applications With Docker",
+    "url": "https://adevait.com/laravel/containerizing-laravel-applications-with-docker",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "November 3rd, 2021",
+    "description": "A practical guide to using Docker for containerizing Laravel applications in development and production environments, covering setup and best practices."
+  },
+  {
+    "id": "laravel-with-oracle-database",
+    "title": "How To Use Laravel With Oracle Database",
+    "url": "https://adevait.com/laravel/how-to-use-laravel-with-oracle-database",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "August 22nd, 2021",
+    "description": "A guide to using Laravel with Oracle Database, exploring how to use one of the most reliable database management systems with the popular PHP framework."
+  },
+  {
+    "id": "jwt-authentication-laravel",
+    "title": "A Detailed Guide to Implementing JWT Authentication in Laravel",
+    "url": "https://adevait.com/laravel/implementing-jwt-authentication-in-laravel",
+    "publication": "Adeva",
+    "publicationUrl": "https://adevait.com",
+    "date": "June 17th, 2021",
+    "description": "A detailed guide to implementing stateless JWT authentication in Laravel, covering official packages and best practices for securing Laravel applications."
   }
 ]
