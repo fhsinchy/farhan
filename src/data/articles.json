@@ -90,6 +90,15 @@
     "description": "A guide to implementing stateless JWT authentication in Node.js, covering the fundamentals and best practices for securing Node applications."
   },
   {
+    "id": "laravel-queues-deep-dive",
+    "title": "A Deep Dive Into Laravel Queues",
+    "url": "https://www.honeybadger.io/blog/laravel-queues-deep-dive/",
+    "publication": "Honeybadger",
+    "publicationUrl": "https://www.honeybadger.io",
+    "date": "August 15th, 2022",
+    "description": "An in-depth guide to Laravel queues, covering jobs, workers, retries, failures, chains, batches, Horizon, and production-ready queue processing patterns."
+  },
+  {
     "id": "laravel-with-vue-js-3",
     "title": "A Quick Guide for How To Use Laravel With Vue.js 3",
     "url": "https://adevait.com/laravel/how-to-use-laravel-with-vue-js-3",
@@ -97,6 +106,15 @@
     "publicationUrl": "https://adevait.com",
     "date": "July 19th, 2022",
     "description": "A quick guide to integrating Vue.js 3 with Laravel, covering the integration of a modern frontend framework with the popular PHP framework."
+  },
+  {
+    "id": "deploying-laravel-aws-elastic-beanstalk",
+    "title": "A Comprehensive Guide to Deploying Laravel Applications on AWS Elastic Beanstalk",
+    "url": "https://www.honeybadger.io/blog/deploying-laravel-aws-elastic-beanstalk/",
+    "publication": "Honeybadger",
+    "publicationUrl": "https://www.honeybadger.io",
+    "date": "May 26th, 2022",
+    "description": "A complete walkthrough for deploying Laravel to AWS Elastic Beanstalk, including environment setup, RDS, Redis/ElastiCache, SSL, and automated GitHub Actions deployments."
   },
   {
     "id": "shopping-cart-laravel-livewire",
