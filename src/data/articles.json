@@ -1,5 +1,14 @@
 [
   {
+    "id": "handling-large-datasets-pagination-cursors-laravel-mongodb",
+    "title": "Handling Large Datasets with Pagination and Cursors in Laravel MongoDB",
+    "url": "https://laravel-news.com/handling-large-datasets-with-pagination-and-cursors-in-laravel-mongodb",
+    "publication": "Laravel News",
+    "publicationUrl": "https://laravel-news.com",
+    "date": "February 10th, 2026",
+    "description": "A practical guide to handling large datasets in Laravel MongoDB by comparing offset pagination and cursor pagination, with implementation patterns, performance trade-offs, indexing tips, and recommendations for choosing the right approach at scale."
+  },
+  {
     "id": "migrating-sql-to-mongodb",
     "title": "Migrating from SQL to MongoDB",
     "url": "https://laravel-news.com/migrating-from-sql-to-mongodb",

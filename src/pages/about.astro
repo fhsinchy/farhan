@@ -42,19 +42,19 @@ import Layout from '../layouts/Layout.astro';
 			
 			<div style="margin-bottom: 2rem;">
 				<h3 style="color: #92cc41; margin-bottom: 1rem;">💡 Technical Expertise</h3>
-				<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-					<span class="nes-badge is-primary">TypeScript/Node.js</span>
-					<span class="nes-badge is-primary">Python</span>
-					<span class="nes-badge is-primary">PHP/Laravel</span>
-					<span class="nes-badge is-primary">Docker</span>
-					<span class="nes-badge is-primary">Kubernetes</span>
-					<span class="nes-badge is-primary">AWS</span>
-					<span class="nes-badge is-primary">PostgreSQL</span>
-					<span class="nes-badge is-primary">MongoDB</span>
-					<span class="nes-badge is-primary">Redis</span>
-					<span class="nes-badge is-primary">Microservices</span>
-					<span class="nes-badge is-primary">System Design</span>
-					<span class="nes-badge is-primary">REST APIs</span>
+				<div class="skills-grid">
+					<span class="skill-chip">TypeScript/Node.js</span>
+					<span class="skill-chip">Python</span>
+					<span class="skill-chip">PHP/Laravel</span>
+					<span class="skill-chip">Docker</span>
+					<span class="skill-chip">Kubernetes</span>
+					<span class="skill-chip">AWS</span>
+					<span class="skill-chip">PostgreSQL</span>
+					<span class="skill-chip">MongoDB</span>
+					<span class="skill-chip">Redis</span>
+					<span class="skill-chip">Microservices</span>
+					<span class="skill-chip">System Design</span>
+					<span class="skill-chip">REST APIs</span>
 				</div>
 			</div>
 			
@@ -113,10 +113,31 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+	.skills-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	.skill-chip {
+		display: inline-block;
+		padding: 0.35rem 0.75rem;
+		border: 2px solid #92cc41;
+		color: #fff;
+		background: #212529;
+		font-size: 0.72rem;
+		line-height: 1.4;
+		white-space: nowrap;
+	}
+
 	@media (max-width: 768px) {
-		.nes-badge {
-			font-size: 0.6rem !important;
-			padding: 0.3rem 0.5rem !important;
+		.skills-grid {
+			gap: 0.5rem;
+		}
+
+		.skill-chip {
+			font-size: 0.6rem;
+			padding: 0.3rem 0.5rem;
 		}
 		
 		h3 {
