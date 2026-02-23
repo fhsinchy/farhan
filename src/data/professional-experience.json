@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Software Engineer",
+    "company": "freeCodeCamp",
+    "period": "Dec 2021 - Present",
+    "description": "Leading Python curriculum design, contributing to OSS codebase, mentoring global contributors."
+  },
+  {
+    "title": "Lead Backend Engineer",
+    "company": "Repocket",
+    "description": "Refactored legacy systems, architected AI-powered APIs, guided team on cloud-native practices."
+  },
+  {
+    "title": "Lead Backend Engineer",
+    "company": "Sayburgh Solutions",
+    "description": "Built FoodQo (multi-tenant SaaS), DigiAdent (high-traffic journalism platform), and OTT platform foundations."
+  }
+]

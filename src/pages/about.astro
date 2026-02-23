@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import professionalExperience from '../data/professional-experience.json';
+import technicalExpertise from '../data/technical-expertise.json';
 ---
 
 <Layout title={`About - ${import.meta.env.SITE_TITLE}`} description="Learn more about Farhan and his technical expertise">
@@ -24,37 +26,26 @@ import Layout from '../layouts/Layout.astro';
 			<div style="margin-bottom: 2rem;">
 				<h3 style="color: #92cc41; margin-bottom: 1rem;">💼 Professional Journey</h3>
 				<div style="font-size: 0.75rem; line-height: 2;">
-					<div style="margin-bottom: 1rem;">
-						<strong style="color: #92cc41;">Software Engineer</strong> - freeCodeCamp<br/>
-						<span style="color: #888;">Dec 2021 - Present</span><br/>
-						Leading Python curriculum design, contributing to OSS codebase, mentoring global contributors.
-					</div>
-					<div style="margin-bottom: 1rem;">
-						<strong style="color: #92cc41;">Lead Backend Engineer</strong> - Repocket<br/>
-						Refactored legacy systems, architected AI-powered APIs, guided team on cloud-native practices.
-					</div>
-					<div style="margin-bottom: 1rem;">
-						<strong style="color: #92cc41;">Lead Backend Engineer</strong> - Sayburgh Solutions<br/>
-						Built FoodQo (multi-tenant SaaS), DigiAdent (high-traffic journalism platform), and OTT platform foundations.
-					</div>
+					{professionalExperience.map((role) => (
+						<div style="margin-bottom: 1rem;">
+							<strong style="color: #92cc41;">{role.title}</strong> - {role.company}<br/>
+							{role.period && (
+								<>
+									<span style="color: #888;">{role.period}</span><br/>
+								</>
+							)}
+							{role.description}
+						</div>
+					))}
 				</div>
 			</div>
 			
 			<div style="margin-bottom: 2rem;">
 				<h3 style="color: #92cc41; margin-bottom: 1rem;">💡 Technical Expertise</h3>
 				<div class="skills-grid">
-					<span class="skill-chip">TypeScript/Node.js</span>
-					<span class="skill-chip">Python</span>
-					<span class="skill-chip">PHP/Laravel</span>
-					<span class="skill-chip">Docker</span>
-					<span class="skill-chip">Kubernetes</span>
-					<span class="skill-chip">AWS</span>
-					<span class="skill-chip">PostgreSQL</span>
-					<span class="skill-chip">MongoDB</span>
-					<span class="skill-chip">Redis</span>
-					<span class="skill-chip">Microservices</span>
-					<span class="skill-chip">System Design</span>
-					<span class="skill-chip">REST APIs</span>
+					{technicalExpertise.map((skill) => (
+						<span class="skill-chip">{skill}</span>
+					))}
 				</div>
 			</div>
 			
