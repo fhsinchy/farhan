@@ -1,14 +1,21 @@
 [
-  "TypeScript/Node.js",
-  "Python",
   "PHP/Laravel",
-  "Docker",
-  "Kubernetes",
-  "AWS",
+  "TypeScript/Node.js",
+  "Go",
+  "Python/FastAPI",
+  "React",
+  "Vue",
   "PostgreSQL",
   "MongoDB",
   "Redis",
+  "Firebase",
+  "Docker",
+  "Kubernetes",
+  "AWS",
+  "Cloudflare",
   "Microservices",
-  "System Design",
-  "REST APIs"
+  "Event-Driven Systems",
+  "Multi-Tenant SaaS",
+  "Grafana",
+  "AI/LLM Integration"
 ]

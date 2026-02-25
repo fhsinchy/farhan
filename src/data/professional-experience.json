@@ -1,18 +1,32 @@
 [
   {
-    "title": "Software Engineer",
-    "company": "freeCodeCamp",
-    "period": "Dec 2021 - Present",
-    "description": "Leading Python curriculum design, contributing to OSS codebase, mentoring global contributors."
+    "title": "Backend Engineer",
+    "company": "Geonode",
+    "period": "Nov 2025 - Present",
+    "description": "Contributing to the core residential proxy platform (Go), designing TCP multiplexing, migrating APIs to Hono, and improving geo-targeting and traffic distribution systems."
   },
   {
     "title": "Lead Backend Engineer",
     "company": "Repocket",
-    "description": "Refactored legacy systems, architected AI-powered APIs, guided team on cloud-native practices."
+    "period": "Apr 2025 - Oct 2025",
+    "description": "Led legacy backend overhaul, re-architected advertiser sync system, built offer attribution pipeline, and deployed an AI-powered financial prediction API (Python, FastAPI)."
+  },
+  {
+    "title": "Staff (Software Engineer)",
+    "company": "freeCodeCamp",
+    "period": "Dec 2021 - Mar 2025",
+    "description": "Spearheaded Python curriculum development, built the Socrates AI learning assistant backend, produced 3 sponsored video courses (2.9M+ views), and authored 5 developer handbooks (500K+ readers)."
   },
   {
     "title": "Lead Backend Engineer",
     "company": "Sayburgh Solutions",
-    "description": "Built FoodQo (multi-tenant SaaS), DigiAdent (high-traffic journalism platform), and OTT platform foundations."
+    "period": "Jul 2020 - Jul 2021",
+    "description": "Architected FoodQo (multi-tenant restaurant SaaS) and DigiAdent (powering somoynews.tv), built a Node.js + GraphQL application framework, and led a team of 10 engineers."
+  },
+  {
+    "title": "Full-Stack Developer",
+    "company": "Sayburgh Solutions",
+    "period": "Nov 2018 - Jul 2020",
+    "description": "Developed a B2B e-commerce marketplace, engineered a healthcare patient management system with Laravel, and delivered custom corporate websites and internal tools."
   }
 ]
