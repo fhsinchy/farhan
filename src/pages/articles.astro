@@ -108,8 +108,21 @@ const publications = [...new Set(allArticles.map(a => a.publication))];
 			noResults.style.display = visibleCount === 0 ? 'block' : 'none';
 		}
 		
+	const urlPublication = new URLSearchParams(window.location.search).get('publication');
+	if (urlPublication) publicationFilter.value = urlPublication;
+	filterArticles();
+
 	searchInput?.addEventListener('input', filterArticles);
-	publicationFilter?.addEventListener('change', filterArticles);
+	publicationFilter?.addEventListener('change', () => {
+		filterArticles();
+		const url = new URL(window.location.href);
+		if (publicationFilter.value) {
+			url.searchParams.set('publication', publicationFilter.value);
+		} else {
+			url.searchParams.delete('publication');
+		}
+		history.replaceState(null, '', url);
+	});
 </script>
 
 <style>
