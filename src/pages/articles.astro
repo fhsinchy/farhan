@@ -108,21 +108,30 @@ const publications = [...new Set(allArticles.map(a => a.publication))];
 			noResults.style.display = visibleCount === 0 ? 'block' : 'none';
 		}
 		
-	const urlPublication = new URLSearchParams(window.location.search).get('publication');
-	if (urlPublication) publicationFilter.value = urlPublication;
-	filterArticles();
-
-	searchInput?.addEventListener('input', filterArticles);
-	publicationFilter?.addEventListener('change', () => {
-		filterArticles();
+	function updateURL() {
 		const url = new URL(window.location.href);
+		if (searchInput.value) {
+			url.searchParams.set('q', searchInput.value);
+		} else {
+			url.searchParams.delete('q');
+		}
 		if (publicationFilter.value) {
 			url.searchParams.set('publication', publicationFilter.value);
 		} else {
 			url.searchParams.delete('publication');
 		}
 		history.replaceState(null, '', url);
-	});
+	}
+
+	const params = new URLSearchParams(window.location.search);
+	const urlQuery = params.get('q');
+	const urlPublication = params.get('publication');
+	if (urlQuery) searchInput.value = urlQuery;
+	if (urlPublication) publicationFilter.value = urlPublication;
+	filterArticles();
+
+	searchInput?.addEventListener('input', () => { filterArticles(); updateURL(); });
+	publicationFilter?.addEventListener('change', () => { filterArticles(); updateURL(); });
 </script>
 
 <style>
