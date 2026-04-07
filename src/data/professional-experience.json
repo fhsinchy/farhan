@@ -1,20 +1,8 @@
 [
   {
-    "title": "Backend Engineer",
-    "company": "Geonode",
-    "period": "Nov 2025 - Present",
-    "description": "Contributing to the core residential proxy platform (Go), designing TCP multiplexing, migrating APIs to Hono, and improving geo-targeting and traffic distribution systems."
-  },
-  {
-    "title": "Lead Backend Engineer",
-    "company": "Repocket",
-    "period": "Apr 2025 - Oct 2025",
-    "description": "Led legacy backend overhaul, re-architected advertiser sync system, built offer attribution pipeline, and deployed an AI-powered financial prediction API (Python, FastAPI)."
-  },
-  {
-    "title": "Staff (Software Engineer)",
+    "title": "Software Engineer",
     "company": "freeCodeCamp",
-    "period": "Dec 2021 - Mar 2025",
+    "period": "Dec 2021 - Present",
     "description": "Spearheaded Python curriculum development, built the Socrates AI learning assistant backend, produced 3 sponsored video courses (2.9M+ views), and authored 5 developer handbooks (500K+ readers)."
   },
   {

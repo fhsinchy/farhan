@@ -1,5 +1,14 @@
 [
   {
+    "id": "clean-architecture-spring-boot-mongodb",
+    "title": "Clean Architecture with Spring Boot and MongoDB",
+    "url": "https://foojay.io/today/clean-architecture-with-spring-boot-and-mongodb/",
+    "publication": "foojay",
+    "publicationUrl": "https://foojay.io",
+    "date": "March 24th, 2026",
+    "description": "A guide to structuring Spring Boot applications following clean architecture principles, keeping business logic independent of framework and database dependencies through layered design and interface-based abstraction with MongoDB."
+  },
+  {
     "id": "heroku-logs-complete-guide-developers",
     "title": "Heroku logs: A complete guide for developers",
     "url": "https://www.honeybadger.io/blog/heroku-logs/",
