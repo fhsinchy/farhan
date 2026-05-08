@@ -1,6 +1,7 @@
 export default {
   title: "farhan.dev",
   author: "Farhan Hasin Chowdhury",
+  email: "interrupt@farhan.dev",
   github: "https://github.com/fhsinchy",
   twitter: "https://twitter.com/frhnhsin",
   linkedin: "https://linkedin.com/in/farhanhasin",
