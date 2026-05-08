@@ -1,5 +1,41 @@
 [
   {
+    "id": "building-a-personalized-content-delivery-system",
+    "title": "Building a Personalized Content Delivery System",
+    "url": "https://foojay.io/today/building-a-personalized-content-delivery-system/",
+    "publication": "foojay",
+    "publicationUrl": "https://foojay.io",
+    "date": "April 23rd, 2026",
+    "description": "A practical guide to building a recommendation engine with Spring Boot and MongoDB, using aggregation pipelines for scoring math server-side and Atlas Vector Search for semantic matching — without specialized ML infrastructure or a separate vector database."
+  },
+  {
+    "id": "mongodb-mcp-server-a-hands-on-implementation-guide",
+    "title": "MongoDB MCP Server: A Hands-On Implementation Guide",
+    "url": "https://medium.com/@MongoDB/mongodb-mcp-server-a-hands-on-implementation-guide-2826c3e8e58d",
+    "publication": "MongoDB on Medium",
+    "publicationUrl": "https://medium.com/@MongoDB",
+    "date": "April 16th, 2026",
+    "description": "A deep dive into configuring, securing, and deploying MongoDB's MCP server in production. Part 3 of the series covers advanced implementation patterns, custom workflows, write operations, and extending the server for specific use cases."
+  },
+  {
+    "id": "understanding-mcp-the-universal-bridge-for-ai-models",
+    "title": "Understanding MCP: The Universal Bridge for AI Models",
+    "url": "https://medium.com/@MongoDB/understanding-mcp-the-universal-bridge-for-ai-models-8ff8b4392e21",
+    "publication": "MongoDB on Medium",
+    "publicationUrl": "https://medium.com/@MongoDB",
+    "date": "April 14th, 2026",
+    "description": "Part 2 of 3. Explores how the Model Context Protocol transforms AI-tool integration from fragmented custom solutions into a unified, standardized approach, covering the three-layer architecture, communication patterns, and security model that power connections between AI assistants and external data sources like MongoDB."
+  },
+  {
+    "id": "integrating-mongodbs-mcp-server-with-popular-mcp-client-applications",
+    "title": "Integrating MongoDB's MCP Server With Popular MCP Client Applications",
+    "url": "https://medium.com/@MongoDB/integrating-mongodbs-mcp-server-with-popular-mcp-client-applications-2bde54419f66",
+    "publication": "MongoDB on Medium",
+    "publicationUrl": "https://medium.com/@MongoDB",
+    "date": "April 9th, 2026",
+    "description": "A hands-on tutorial for setting up MongoDB's official MCP server with Claude Desktop, VS Code (GitHub Copilot), and Cursor IDE, enabling natural language queries against your MongoDB databases without writing queries manually."
+  },
+  {
     "id": "clean-architecture-spring-boot-mongodb",
     "title": "Clean Architecture with Spring Boot and MongoDB",
     "url": "https://foojay.io/today/clean-architecture-with-spring-boot-and-mongodb/",
