@@ -1,16 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import site from '../site.config';
 import professionalExperience from '../data/professional-experience.json';
 import technicalExpertise from '../data/technical-expertise.json';
 ---
 
-<Layout title={`About - ${import.meta.env.SITE_TITLE}`} description="Learn more about Farhan and his technical expertise">
+<Layout title={`About - ${site.title}`} description="Learn more about Farhan and his technical expertise">
 	<div class="nes-container is-dark with-title">
 		<p class="title">👨‍💻 About Me</p>
 		
 		<div class="nes-container is-rounded">
 			<div style="margin-bottom: 2rem;">
-				<h2 style="margin: 0;">{import.meta.env.SITE_AUTHOR}</h2>
+				<h2 style="margin: 0;">{site.author}</h2>
 			</div>
 			
 			<div style="margin-bottom: 2rem;">

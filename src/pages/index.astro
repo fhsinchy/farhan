@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import site from '../site.config';
 import { getAllArticles } from '../utils/articles';
 import manualArticles from '../data/articles.json';
 import { getCurrentlyReading } from '../utils/goodreads';
@@ -43,9 +44,9 @@ const featuredWork = [
 ];
 ---
 
-<Layout title={`${import.meta.env.SITE_AUTHOR} - Backend Engineer & Technical Educator`} description="Backend engineer with 8+ years experience and technical educator reaching millions of developers worldwide">
+<Layout title={`${site.author} - Backend Engineer & Technical Educator`} description="Backend engineer with 8+ years experience and technical educator reaching millions of developers worldwide">
 	<div class="nes-container is-dark with-title">
-		<p class="title">👨‍💻 {import.meta.env.SITE_AUTHOR}</p>
+		<p class="title">👨‍💻 {site.author}</p>
 		
 		<!-- Hero Section -->
 		<div class="nes-container is-rounded hero-section" style="margin-bottom: 2rem;">
@@ -74,8 +75,8 @@ const featuredWork = [
 			<!-- CTA Buttons -->
 			<div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
 				<a href="/about" class="nes-btn is-primary">About Me</a>
-				<a href={import.meta.env.GITHUB_URL} target="_blank" rel="noopener noreferrer" class="nes-btn is-normal">GitHub</a>
-				<a href={import.meta.env.LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="nes-btn is-success">LinkedIn</a>
+				<a href={site.github} target="_blank" rel="noopener noreferrer" class="nes-btn is-normal">GitHub</a>
+				<a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="nes-btn is-success">LinkedIn</a>
 			</div>
 		</div>
 
@@ -196,7 +197,7 @@ const featuredWork = [
 			</p>
 			<div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
 				<a href="mailto:interrupt@farhan.dev" class="nes-btn is-success">Email Me</a>
-				<a href={import.meta.env.TWITTER_URL} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary">Twitter</a>
+				<a href={site.twitter} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary">Twitter</a>
 				<a href="/about" class="nes-btn is-warning">About Me</a>
 			</div>
 		</div>

@@ -1,4 +1,5 @@
 import { XMLParser } from 'fast-xml-parser';
+import site from '../site.config';
 
 export interface Article {
   id: string;
@@ -84,7 +85,7 @@ function parseRSSToArticles(rssXML: string, publication: string, publicationUrl:
 
 export async function getFreeCodeCampArticles(): Promise<Article[]> {
   try {
-    const rss = await fetchRSS(import.meta.env.FREECODECAMP_AUTHOR_RSS);
+    const rss = await fetchRSS(site.freeCodeCampRSS);
     const articles = parseRSSToArticles(rss, 'freeCodeCamp', 'https://www.freecodecamp.org/news');
     
     if (articles.length === 0) {

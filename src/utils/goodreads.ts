@@ -1,6 +1,7 @@
 import { XMLParser } from 'fast-xml-parser';
+import site from '../site.config';
 
-const GOODREADS_USER_ID = import.meta.env.GOODREADS_USER_ID;
+const GOODREADS_USER_ID = site.goodreadsUserId;
 
 export interface Book {
   title: string;

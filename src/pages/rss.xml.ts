@@ -1,4 +1,5 @@
 import rss from '@astrojs/rss';
+import site from '../site.config';
 import type { APIContext } from 'astro';
 import { getAllArticles } from '../utils/articles';
 import manualArticles from '../data/articles.json';
@@ -13,8 +14,8 @@ export async function GET(context: APIContext) {
   const articles = await getAllArticles(manualArticles);
 
   return rss({
-    title: import.meta.env.SITE_TITLE,
-    description: `Articles by ${import.meta.env.SITE_AUTHOR}`,
+    title: site.title,
+    description: `Articles by ${site.author}`,
     site: context.site!,
     items: articles.map((article) => ({
       title: article.title,

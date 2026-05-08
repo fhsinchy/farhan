@@ -6,11 +6,13 @@ import manualArticles from '../data/articles.json';
 // Fetch all articles (RSS + manual, deduplicated and sorted)
 const allArticles = await getAllArticles(manualArticles);
 
+import site from '../site.config';
+
 // Get unique publications for filter
 const publications = [...new Set(allArticles.map(a => a.publication))];
 ---
 
-<Layout title={`All Articles - ${import.meta.env.SITE_TITLE}`} description="Browse all articles by Farhan">
+<Layout title={`All Articles - ${site.title}`} description="Browse all articles by Farhan">
 	<div class="nes-container is-dark with-title">
 		<p class="title">📝 All Articles</p>
 		

@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import { getReadBooks } from '../utils/goodreads';
 
+import site from '../site.config';
+
 // Fetch read books from Goodreads RSS
 const books = await getReadBooks();
 ---
 
-<Layout title={`Books - ${import.meta.env.SITE_TITLE}`} description="Books I've been reading">
+<Layout title={`Books - ${site.title}`} description="Books I've been reading">
 	<div class="nes-container is-dark with-title">
 		<p class="title">📚 Bookshelf</p>
 		
@@ -42,7 +44,7 @@ const books = await getReadBooks();
 									))}
 								</div>
 								
-								<div class="review-text">
+								<div class={`review-text ${!book.review ? 'placeholder' : ''}`}>
 									{book.review || "Didn't write a review for this one, but it was a great read!"}
 								</div>
 								
@@ -135,6 +137,13 @@ const books = await getReadBooks();
 			font-family: monospace;
 			word-break: break-word;
 			overflow-wrap: anywhere;
+		}
+
+		.review-text.placeholder {
+			background-color: rgba(255, 255, 255, 0.05);
+			border: 2px dashed #555;
+			color: #888;
+			font-style: italic;
 		}
 
 		.book-link-wrap {
