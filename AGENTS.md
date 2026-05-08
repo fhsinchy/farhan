@@ -16,7 +16,7 @@ Personal portfolio website ([farhan.dev](https://farhan.dev)) built with **Astro
 
 ## Commands
 
-Use `pnpm` if available, otherwise fall back to `npm`.
+Use `pnpm` if available, otherwise fall back to `npm`. Never use `yarn` or any other package manager even if present.
 
 ```bash
 pnpm dev       # Start dev server at localhost:4321
@@ -28,7 +28,7 @@ No test framework. Deployment via GitHub Actions to GitHub Pages on push to `mai
 
 ## Project Structure
 
-```
+```text
 src/
 ├── pages/             # Astro file-based routes
 │   ├── index.astro    # Homepage
