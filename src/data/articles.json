@@ -1,5 +1,23 @@
 [
   {
+    "id": "the-database-layer-your-agent-stack-is-missing",
+    "title": "The Database Layer Your Agent Stack Is Missing",
+    "url": "https://pub.towardsai.net/the-database-layer-your-agent-stack-is-missing-b7af5a12fbce",
+    "publication": "Towards AI",
+    "publicationUrl": "https://pub.towardsai.net",
+    "date": "June 23rd, 2026",
+    "description": "An exploration of how MongoDB has evolved into a unified backend for AI agents, handling state persistence, vector search, and fault tolerance in a single system — eliminating the need to stitch together separate databases for operational data, embeddings, and analytics."
+  },
+  {
+    "id": "next-js-error-handling-practical-guide",
+    "title": "Next.js error handling: a practical guide",
+    "url": "https://www.honeybadger.io/blog/next-js-error-handling/",
+    "publication": "Honeybadger",
+    "publicationUrl": "https://www.honeybadger.io",
+    "date": "June 18th, 2026",
+    "description": "A practical walkthrough of error handling in Next.js App Router, covering expected errors via Server Actions and Server Components, uncaught exceptions with error boundaries, the notFound() function for 404s, and integrating Honeybadger for production error monitoring."
+  },
+  {
     "id": "building-a-personalized-content-delivery-system",
     "title": "Building a Personalized Content Delivery System",
     "url": "https://foojay.io/today/building-a-personalized-content-delivery-system/",
