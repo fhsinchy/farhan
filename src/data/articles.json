@@ -1,5 +1,23 @@
 [
   {
+    "id": "serving-multi-modal-insights-post-inference-storage-querying-mongodb",
+    "title": "Serving Multi-Modal Insights: Post-Inference Storage and Querying with MongoDB",
+    "url": "https://medium.com/mongodb/serving-multi-modal-insights-post-inference-storage-and-querying-with-mongodb-10dc546e7d4c",
+    "publication": "MongoDB on Medium",
+    "publicationUrl": "https://medium.com/mongodb",
+    "date": "July 23rd, 2026",
+    "description": "A hands-on tutorial for building a FastAPI image-processing API that stores files in DigitalOcean Spaces, runs vision inference through Groq, and saves structured results in MongoDB for filtering and aggregation."
+  },
+  {
+    "id": "starlette-vs-fastapi-what-fastapi-actually-adds",
+    "title": "Starlette vs FastAPI: what FastAPI actually adds",
+    "url": "https://www.honeybadger.io/blog/starlette-vs-fastapi/",
+    "publication": "Honeybadger",
+    "publicationUrl": "https://www.honeybadger.io",
+    "date": "July 20th, 2026",
+    "description": "A comparison of Starlette and FastAPI that separates the features they share from what FastAPI adds through Pydantic, including validation, dependency injection, and automatic OpenAPI documentation."
+  },
+  {
     "id": "the-database-layer-your-agent-stack-is-missing",
     "title": "The Database Layer Your Agent Stack Is Missing",
     "url": "https://pub.towardsai.net/the-database-layer-your-agent-stack-is-missing-b7af5a12fbce",
