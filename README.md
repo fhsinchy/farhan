@@ -30,7 +30,7 @@ A retro-styled personal portfolio built with Astro, featuring automated content 
 │   ├── pages/          # File-based routing
 │   │   ├── index.astro      # Homepage
 │   │   ├── about.astro      # About page
-│   │   ├── articles.astro   # Articles listing
+│   │   ├── writing.astro    # Articles listing (/articles redirects here)
 │   │   └── books.astro      # Reading list
 │   └── utils/          # Utility functions
 │       ├── goodreads.ts     # Goodreads RSS parser

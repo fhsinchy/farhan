@@ -8,6 +8,9 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
+  redirects: {
+    '/articles': '/writing'
+  },
   site: 'https://farhan.dev',
   integrations: [sitemap()]
 });

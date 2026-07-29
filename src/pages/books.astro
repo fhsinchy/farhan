@@ -6,6 +6,29 @@ import site from '../site.config';
 
 // Fetch read books from Goodreads RSS
 const books = await getReadBooks();
+
+const REVIEW_PREVIEW_LENGTH = 500;
+
+function getReviewPreview(review?: string) {
+	if (!review) {
+		return {
+			text: "Didn't write a review for this one, but it was a great read!",
+			isTruncated: false
+		};
+	}
+
+	if (review.length <= REVIEW_PREVIEW_LENGTH) {
+		return { text: review, isTruncated: false };
+	}
+
+	const lastWordBoundary = review.lastIndexOf(' ', REVIEW_PREVIEW_LENGTH);
+	const cutoff = lastWordBoundary > 0 ? lastWordBoundary : REVIEW_PREVIEW_LENGTH;
+
+	return {
+		text: `${review.slice(0, cutoff).trimEnd()}...`,
+		isTruncated: true
+	};
+}
 ---
 
 <Layout title={`Books - ${site.title}`} description="Books I've been reading">
@@ -18,52 +41,64 @@ const books = await getReadBooks();
 			</div>
 			
 			<p style="font-size: 0.8rem; line-height: 1.8; margin-bottom: 2rem;">
-				Here are some of the books I've been reading lately. I love exploring different genres - 
-				from classic literature to modern fiction, philosophical works to horror stories.
-				These reviews are from my Goodreads account.
+				Here are some of the books I've been reading lately. These ratings and reviews are from my Goodreads account.
 			</p>
 			
 			<!-- Books List -->
 			<div class="books-list">
-				{books.map((book, index) => (
-					<div class="nes-container is-rounded with-title is-dark book-item">
-						<p class="title">{book.title}</p>
-						
-						<div class="book-content">
-							<div class="book-cover">
-								<img src={book.cover} alt={book.title} />
-							</div>
+				{books.map((book) => {
+					const reviewPreview = getReviewPreview(book.review);
+					const userRating = book.userRating ?? 0;
+					const hasRating = userRating > 0;
+
+					return (
+						<div class="nes-container is-rounded with-title is-dark book-item">
+							<p class="title">{book.title}</p>
 							
-							<div class="book-details">
-								<div class="book-author-wrap">
-									<span class="book-author">by {book.author}</span>
-								</div>
-								<div class="rating">
-									{Array.from({ length: 5 }).map((_, i) => (
-										<span style={`color: ${i < (book.rating ?? 0) ? '#92cc41' : '#666'}; font-size: 0.8rem;`}>★</span>
-									))}
+							<div class="book-content">
+								<div class="book-cover">
+									<img src={book.cover} alt={book.title} />
 								</div>
 								
-								<div class={`review-text ${!book.review ? 'placeholder' : ''}`}>
-									{book.review || "Didn't write a review for this one, but it was a great read!"}
-								</div>
-								
-								<div class="book-link-wrap">
-									<a href={book.url} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary book-link">
-										View on Goodreads →
-									</a>
+								<div class="book-details">
+									<div class="book-author-wrap">
+										<span class="book-author">by {book.author}</span>
+									</div>
+									<div class="rating" aria-label={hasRating ? `My rating: ${userRating} out of 5` : 'I have not rated this book'}>
+										{hasRating ? (
+											<>
+												<div class="rating-stars" aria-hidden="true">
+													{Array.from({ length: 5 }).map((_, i) => (
+														<span class="rating-star" style={`--fill: ${i < userRating ? 100 : 0}%`}>★</span>
+													))}
+												</div>
+											</>
+										) : (
+											<span class="rating-value">Not rated</span>
+										)}
+									</div>
+
+									<div class={`review-text ${!book.review ? 'placeholder' : ''}`}>
+										{reviewPreview.text}
+									</div>
+
+									<div class="book-link-wrap">
+										<a href={book.url} target="_blank" rel="noopener noreferrer" class="nes-btn is-primary book-link">
+											{reviewPreview.isTruncated ? 'Read full review on Goodreads →' : 'View on Goodreads →'}
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				))}
+					);
+				})}
 			</div>
 			
 			<div style="text-align: center; margin-top: 3rem;">
 				<a href="https://www.goodreads.com/user/show/155924638-farhan-hasin-chowdhury" target="_blank" rel="noopener noreferrer" class="nes-btn is-primary">
 					View on Goodreads →
 				</a>
-				<a href="/articles" class="nes-btn is-success">Browse Articles</a>
+				<a href="/writing" class="nes-btn is-success">Browse Articles</a>
 			</div>
 		</div>
 		</div>
@@ -122,9 +157,38 @@ const books = await getReadBooks();
 		
 		.rating {
 			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
 			gap: 2px;
 			flex-shrink: 0;
 			margin-bottom: 1.25rem;
+		}
+
+		.rating-value {
+			font-size: 0.55rem;
+			line-height: 1.5;
+		}
+
+		.rating-stars {
+			display: flex;
+			gap: 2px;
+		}
+
+		.rating-star {
+			background: linear-gradient(
+				90deg,
+				#92cc41 var(--fill),
+				#666 var(--fill)
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			color: transparent;
+			-webkit-text-fill-color: transparent;
+			font-size: 0.8rem;
+		}
+
+		.rating-value {
+			color: #fff;
 		}
 		
 		.review-text {
@@ -178,8 +242,12 @@ const books = await getReadBooks();
 				border-width: 2px;
 			}
 
-			.rating span {
+			.rating-star {
 				font-size: 0.7rem !important;
+			}
+
+			.rating-value {
+				font-size: 0.5rem;
 			}
 			
 			.review-text {

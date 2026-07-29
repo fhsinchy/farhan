@@ -6,7 +6,7 @@ const GOODREADS_USER_ID = site.goodreadsUserId;
 export interface Book {
   title: string;
   author: string;
-  rating?: number;
+  userRating?: number;
   review?: string;
   url: string;
   cover: string;
@@ -63,29 +63,26 @@ function parseRSSToBooks(rssXML: string): Book[] {
         author = typeof authorMatch === 'string' ? authorMatch : authorMatch[1].trim();
       }
       
-      // Extract rating
-      let rating = 0;
-      const ratingMatch = description.match(/rating:\s*(\d+)/i) ||
-                         description.match(/(\d+)\s*of\s*5\s*stars/i);
-      if (ratingMatch) {
-        rating = parseInt(ratingMatch[1], 10);
-      }
+      // Extract the user's own rating from Goodreads
+      const userRatingValue = item.user_rating ??
+        description.match(/(?:^|<br\s*\/?>)\s*rating:\s*(\d+)/im)?.[1];
+      const parsedUserRating = Number.parseInt(String(userRatingValue), 10);
+      const userRating = Number.isFinite(parsedUserRating)
+        ? parsedUserRating
+        : undefined;
       
-      // Extract review text - it's in the description after "review:"
-      let review = '';
+      // Prefer the dedicated review field, with the description as a fallback
       const reviewMatch = description.match(/review:\s*(.+?)(?:\n|$)/i);
-      if (reviewMatch) {
-        review = reviewMatch[1]
-          .replace(/<br\s*\/?>/gi, ' ')
-          .replace(/<[^>]+>/g, '')
-          .replace(/\s+/g, ' ')
-          .trim();
-      }
+      const review = String(item.user_review || reviewMatch?.[1] || '')
+        .replace(/<br\s*\/?>/gi, ' ')
+        .replace(/<[^>]+>/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
       
       return {
         title: item.title || '',
         author,
-        rating,
+        userRating,
         review: review || '', // Empty string if no review found
         url: item.link || item.guid || '',
         cover
